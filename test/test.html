@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --max-width: 1200px;
+      --space: 1.25rem;
+      --fs-h1: clamp(28px, 5vw, 48px);
+      --fs-h2: clamp(20px, 3.5vw, 32px);
+      --fs-body: clamp(14px, 1.2vw, 18px);
+      --primary: #2563eb;
+      --secondary: #f3f4f6;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: system-ui, sans-serif; line-height: 1.6; color: #111; }
+    img { max-width:100%; height:auto; display:block; border-radius: 8px; }
+
+    .container { width: min(100% - 2rem, var(--max-width)); margin-inline: auto; }
+
+    /* Navbar */
+    header {
+      position: sticky; top:0; z-index:10;
+      background:#fff; border-bottom:1px solid #eee;
+    }
+    .nav { display:flex; justify-content:space-between; align-items:center; padding:1rem; }
+    .nav .links { display:flex; gap:1rem; flex-wrap: wrap; }
+    .nav a { text-decoration:none; color:#111; font-weight:500; padding:.5rem .75rem; }
+    .nav a:hover { color:var(--primary); }
+
+    /* Hero */
+    .hero {
+      display:grid; gap:var(--space);
+      padding-block:3rem;
+      text-align:center;
+    }
+    .hero h1 { font-size: var(--fs-h1); }
+    .hero p { font-size: var(--fs-body); color:#555; }
+    .hero .btn {
+      margin-top:1rem; background:var(--primary); color:#fff;
+      padding:.75rem 1.5rem; border:none; border-radius:50px;
+      font-size:1rem; cursor:pointer; text-decoration:none;
+      display:inline-block;
+    }
+    .hero .btn:hover { opacity:0.9; }
+    @media(min-width: 768px){
+      .hero { grid-template-columns: 1fr 1fr; text-align:left; align-items:center; }
+    }
+
+    /* Services / Works */
+    .section { padding-block:3rem; }
+    .section h2 { text-align:center; font-size:var(--fs-h2); margin-bottom:2rem; }
+    .grid {
+      display:grid; gap: var(--space);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      background:#fff; border:1px solid #eee; border-radius:12px;
+      padding:var(--space); text-align:center; box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    }
+    .card h3 { margin:.75rem 0; font-size:1.2rem; }
+
+    /* Contact */
+    .contact {
+      background: var(--secondary);
+      padding-block:3rem;
+      text-align:center;
+    }
+    .contact h2 { margin-bottom:1rem; }
+    .contact p { margin-bottom:1.5rem; }
+    .contact .btn { background:var(--primary); color:#fff; padding:.75rem 1.25rem; border:none; border-radius:8px; }
+
+    /* Footer */
+    footer {
+      text-align:center; padding:1rem; font-size:.875rem;
+      background:#111; color:#eee;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="container nav">
+      <strong>MyPortfolio</strong>
+      <nav class="links">
+        <a href="#work">Works</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <div>
+      <h1>สวัสดีครับ 👋<br>ผมคือ Freelancer Web</h1>
+      <p>รับทำเว็บไซต์ Landing Page, Portfolio, และออกแบบเว็บ Responsive ครบจบในที่เดียว</p>
+      <a href="#contact" class="btn">ติดต่อเลย</a>
+    </div>
+    <img src="https://picsum.photos/600/400" alt="Profile Image">
+  </section>
+
+  <!-- Works -->
+  <section class="section container" id="work">
+    <h2>ผลงานที่ผ่านมา</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/400/250?1" alt="">
+        <h3>Landing Page 1</h3>
+        <p>ตัวอย่างเว็บไซต์โปรโมทสินค้า</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/250?2" alt="">
+        <h3>Portfolio 2</h3>
+        <p>ตัวอย่างเว็บแสดงผลงาน</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/250?3" alt="">
+        <h3>Business Site</h3>
+        <p>เว็บสำหรับบริษัทขนาดเล็ก</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section container" id="services">
+    <h2>บริการที่รับทำ</h2>
+    <div class="grid">
+      <div class="card"><h3>Landing Page</h3><p>โปรโมทสินค้า/บริการ</p></div>
+      <div class="card"><h3>Portfolio</h3><p>เว็บแสดงผลงานส่วนตัว</p></div>
+      <div class="card"><h3>Business Website</h3><p>สำหรับธุรกิจขนาดเล็ก</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>ติดต่อผมได้ที่นี่</h2>
+    <p>Email: purinat918@email.com</p>
+    <button class="btn">ส่งข้อความ</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 MyPortfolio - สร้างด้วย ❤️ 
+  </footer>
+</body>
+</html>
